@@ -9,95 +9,106 @@ Make sure you have the following installed on your machine:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-## Building Docker Images
+## Installation on Windows
 
-To build the Docker images for all services (frontend, backend, and AI module), navigate to the root directory of the project and run:
+### Step 1: Install Docker Desktop
 
+1. Open the downloaded installer file (Docker Desktop Installer.exe).
+2. Follow the installer instructions:
+    - Accept the license agreement.
+    - Choose any additional options (e.g., integration with WSL 2, if available).
+
+3. Click "Install" and wait for the installation to complete.
+4. You may need to restart your computer after installation.
+
+### Step 2: Launch Docker Desktop
+1. After restarting, Docker Desktop should launch automatically.
+2. If not, open Docker Desktop manually from the Start menu.
+3. Wait for Docker to initialize. You should see the Docker icon appear in the taskbar.
+
+
+### Step 3: Configure the `docker-compose.yml`
+Ensure the main project directory contains a `docker-compose.yml`
+
+### Step 4: Start the Containers
+1. Open PowerShell or Command Prompt.
+2. Navigate to the project directory:
 ```bash
-docker-compose build
+cd path/to/project
 ```
-
-This command reads the docker-compose.yml file and builds the images according to the specifications provided.
-
-## Running the Containers
-
-Once the images are built, you can start the containers using:
-
+3. Build image.
 ```bash
-docker-compose up
+docker-compose build 
 ```
-
-This command will start all services defined in the docker-compose.yml. You can access:
-
-    Frontend: http://localhost:8080
-    Backend: http://localhost:3000
-    AI Module: http://localhost:5000
-
-To run the containers in detached mode (background), use:
-
+4. Run the containers with Docker Compose:
 ```bash
 docker-compose up -d
 ```
+The -d option runs the containers in detached mode.
 
-Use this:
+### Step 5: Check container status
+To check if the containers are running properly, use the command:
+
 ```bash
 docker ps
 ```
-to check which containers are active.
 
-# Viewing Changes
+### Step 6: Access the Application
+Open your web browser and go to:
 
-## During Development
-While developing, you may want to see changes reflected in the running containers without rebuilding the images each time. Here’s how to do it:
-
-### Frontend Changes:
-Navigate to the frontend directory.
-Run your development server:
-
-```bash
-npm run serve
+```
+localhost:8080
 ```
 
-This allows you to see changes in real-time in your browser. However, note that you won't be using Docker for this specific part.
+## Installation on Linux (Ubuntu)
 
-### Backend Changes:
-For the Node.js backend, if you are not in Docker, run:
+### Prerequisites
 
-```bash
-npm run start
-```
+- **Docker**, **docker-compose** installed on Ubuntu.
+- **Project repository** cloned to your local machine.
 
-If you want to see changes in Docker, you will need to rebuild the backend service using:
-
-```bash
-docker-compose up --build backend
-```
-
-### AI Module Changes:
-Similar to the backend, you will need to rebuild the AI module if you make changes to the code. Use:
+### Step 1: Manage Docker as a Non-Root User
+If you want to avoid using sudo with Docker commands, add your user to the Docker group:
 
 ```bash
-docker-compose up --build ai_module
+sudo usermod -aG docker $USER
 ```
-
-## After Making Changes
-If you make changes to any service (frontend, backend, or AI module), you will need to rebuild the relevant Docker image and restart the container. You can do this for all services with:
-
+Log out and back in for this to take effect, or use:
 ```bash
-docker-compose up --build
+newgrp docker
 ```
 
-## Stopping the Containers
-To stop the running containers, use:
+### Step 2: Configure the `docker-compose.yml`
+Ensure the main project directory contains a `docker-compose.yml`.
 
+### Step 3: Start the Containers
+1. Open Terminal.
+2. Navigate to the project directory:
+```bash
+cd path/to/project
+```
+3. Run the containers with Docker Compose:
+```bash
+docker-compose up -d
+```
+The -d option runs the containers in detached mode.
+
+### Step 4: Check Container Status
+To check if the containers are running properly, use the command:
+```bash
+docker-compose ps
+```
+
+### Step 5: Access the Application
+Open your web browser and go to:
+```
+localhost:8080
+```
+
+### Step 6: Stop the Containers
+To stop the running containers, execute:
 ```bash
 docker-compose down
-```
-
-This command stops and removes the containers, but retains the built images. If you want to remove the images as well, use:
-
-```bash
-docker-compose down --rmi all
 ```
 
 npm install cors
