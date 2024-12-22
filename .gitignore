@@ -1,2 +1,61 @@
 /ai_module/dataset/processed_dataset/
 /ai_module/dataset/heart_2020_cleaned.csv
+
+# Node.js dependencies
+/frontend/heart-disease-predictor/node_modules/
+
+# Build output directories
+/frontend/heart-disease-predictor/dist/
+
+# Logs
+/frontend/heart-disease-predictor/*.log
+
+# Local IDE settings
+/frontend/heart-disease-predictor/.vscode/
+/frontend/heart-disease-predictor/.idea/
+
+# AI module dataset
+/ai_module/dataset/processed_dataset/
+/ai_module/dataset/heart_2020_cleaned.csv
+
+# General logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+
+# IDE and editor configurations
+.vscode/
+.idea/
+.DS_Store
+
+# System temporary files
+*.swp
+*.swo
+Thumbs.db
+
+# Environment files
+.env
+.env.*.local
+
+# Test coverage
+coverage/
+*.lcov
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Vite-specific cache
+/.vite/
+.vite/
+
+
