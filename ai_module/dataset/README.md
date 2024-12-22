@@ -1,6 +1,6 @@
 # Heart Disease Prediction - Data Preprocessing Module
 
-This repository contains a Python script (`data_preprocessing.py`) designed to preprocess the [heart disease dataset](`https://www.kaggle.com/code/mushfirat/heartdisease-eda-prediction`) for machine learning tasks. The script handles missing values, removes outliers (based on BMI), encodes categorical variables, and splits the data into training, validation, and test sets.
+This repository contains a Python script (`data_preprocessing.py`) designed to preprocess the [Kaggle](https://www.kaggle.com/code/mushfirat/heartdisease-eda-prediction "Heart Disease EDA & Prediction") for machine learning tasks. The script handles missing values, removes outliers (based on BMI), encodes categorical variables, and splits the data into training, validation, and test sets.
 
 ## Overview
 
